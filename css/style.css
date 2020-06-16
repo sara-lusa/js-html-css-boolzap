@@ -27,6 +27,18 @@ body {
   height: calc(100vh - 10%);
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  height: 100%;
+}
+
 main {
   width: 100%;
   height: 100%;
@@ -56,6 +68,59 @@ section header {
   background-color: #eaeaea;
 }
 /* FINE STILI GENERALI */
+
+/* TEMPLATE(?) */
+.single-contact {
+  height: 100%;
+  padding: 10px;
+  border: 0.5px solid lightgrey;
+}
+
+.single-contact .avatar {
+  height: 100%;
+  padding-right: 10px;
+}
+
+.single-contact .avatar img {
+  border-radius: 50%;
+}
+
+.single-contact .avatar, .name-subtitle {
+  float: left;
+}
+
+.single-contact .time-icons {
+  align-self: flex-end;
+  float: right;
+}
+/* FINE TEMPLATE(?) */
+
+
+/* SECTION SIDE-BAR */
+.contacts ul li {
+  height: 60px;
+}
+#notifica {
+  background-color: #8edafc;
+}
+
+#notifica .no-ring {
+  float: left;
+  background-color: white;
+  color: #8edafc;
+  padding: 3px;
+  line-height: 35px;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.search {
+  background-color: #fafafa;
+}
+/* FINE SECTION SIDE-BAR */
 
 /* SECTION CHAT-ROOM */
 .chat-room .chat {
