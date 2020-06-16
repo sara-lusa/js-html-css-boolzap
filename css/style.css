@@ -125,21 +125,60 @@ section header {
 /* SECTION CHAT-ROOM */
 .chat-room .chat {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 80px);
 }
 
 .chat-room .read-chat {
-  height: calc(100% - 160px);
+  height: calc(100% - 80px);
   width: 100%;
+  padding: 20px;
+}
 
+.chat-room .read-chat .texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.single-text {
+  /* flex-basis: 20%; */
+  padding: 10px 10px 5px 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  width: 35%;
+  margin: 10px 0;
+}
+
+.single-text .time {
+  text-align: end;
+  color: #c1d0bb;
+  font-size: 13px;
+}
+
+.green-text {
+  align-self: flex-end;
+  background-color: #d5f9ba;
+}
+
+.white-text {
+  align-self: flex-start;
+  background-color: white;
 }
 
 .chat-room .write-chat {
   height: 80px;
   width: 100%;
   background-color: #f3eeeb;
-  /* position: fixed;
-  bottom: 0;
-  right: 0; */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
 }
+
+
 /* FINE SECTION CHAT-ROOM */
+
+/* TEMPLATE */
+.template {
+  display: none;
+}
+/* FINE TEMPLATE */
