@@ -26,4 +26,30 @@ body {
   height: 500px;
   background-color: coral;
 }
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: gold;
+  display: flex;
+}
+
+section.side-bar {
+  height: 100%;
+  background-color: lightblue;
+  flex-basis: 35%;
+}
+
+section.chat-room {
+  height: 100%;
+  background-color: pink;
+  flex-basis: 65%;
+}
+
+section header {
+  height: 80px;
+  width: 100%;
+  background-color: brown;
+  border: 1px solid black;
+}
 /* FINE STILI GENERALI */
