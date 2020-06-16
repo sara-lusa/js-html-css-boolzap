@@ -15,6 +15,11 @@ $(document).ready(function() {
 });
 
 // FUNZIONI
+
+// Function che serve a trascrivere del testo da un input ad un template
+// dell'html clonato, per poi appenderlo ad una lista
+// NESSUN argomento
+// NESSUN return
 function scriviEInviaMessaggio() {
   // Creo una variabile con il valore dell'input(messaggio)
   var valoreText = $('.write-chat input').val();

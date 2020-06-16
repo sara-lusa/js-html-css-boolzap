@@ -35,6 +35,10 @@ a {
   color: inherit;
 }
 
+i {
+  cursor: pointer;
+}
+
 img {
   height: 100%;
 }
@@ -43,53 +47,6 @@ main {
   width: 100%;
   height: 100%;
   display: flex;
-}
-
-/* SECTIONS */
-section.side-bar {
-  height: 100%;
-  flex-basis: 35%;
-  background-color: white;
-}
-
-section.chat-room {
-  height: 100%;
-  flex-basis: 65%;
-  background-image: url(../img/mine.jpg);
-  border-left: 1px solid #e0dfdf;
-}
-
-section header {
-  height: 80px;
-  width: 100%;
-  background-color: #eaeaea;
-}
-
-section header .single-contact {
-  border-bottom: none;
-}
-
-section header .name-subtitle {
-  padding: 10px;
-}
-
-section header .time-icons {
-  line-height: 60px;
-  font-size: 20px;
-  color: #b1b1b1;
-}
-
-section header .time-icons i {
-  margin: 0 5px;
-}
-
-.search input,
-.write-chat input {
-  width: 80%;
-  height: 100%;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
 }
 /* FINE STILI GENERALI */
 
@@ -136,7 +93,53 @@ section header .time-icons i {
 /* Fine Singolo contatto */
 /* FINE CLASSI DA RIUTILIZZARE */
 
+/* MAIN */
+/* SECTIONS GENERALI */
+section.side-bar {
+  height: 100%;
+  flex-basis: 35%;
+  background-color: white;
+}
 
+section.chat-room {
+  height: 100%;
+  flex-basis: 65%;
+  background-image: url(../img/mine.jpg);
+  border-left: 1px solid #e0dfdf;
+}
+
+section header {
+  height: 80px;
+  width: 100%;
+  background-color: #eaeaea;
+}
+
+section header .single-contact {
+  border-bottom: none;
+}
+
+section header .name-subtitle {
+  padding: 10px;
+}
+
+section header .time-icons {
+  line-height: 60px;
+  font-size: 20px;
+  color: #b1b1b1;
+}
+
+section header .time-icons i {
+  margin: 0 5px;
+}
+
+.search input,
+.write-chat input {
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
 /* SECTION SIDE-BAR */
 .contacts {
   height: calc(100% - 80px);
@@ -178,19 +181,20 @@ section header .time-icons i {
   margin-right: 10px;
 }
 
-.search {
+.search-wrapper {
   background-color: #fafafa;
   padding: 5px;
   height: 50px;
 }
 
+.search {
+  background-color: white;
+  height: 100%;
+}
+
 .search i {
   width: 18%;
-  background: white;
-  height: 100%;
   text-align: center;
-  padding: 10px;
-  margin-right: 0;
 }
 /* FINE SECTION SIDE-BAR */
 
@@ -262,6 +266,7 @@ section header .time-icons i {
   color: #6b7376;
 }
 /* FINE SECTION CHAT-ROOM */
+/* FINE MAIN */
 
 /* TEMPLATE */
 .template {
