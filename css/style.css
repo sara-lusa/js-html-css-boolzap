@@ -126,7 +126,7 @@ section header .time-icons i {
   font-size: 14px;
 }
 
-.time {
+.time { /* DA FARE: decidere se assemblare con classe .subtitle */
   color: #c1d0bb;
   font-size: 13px;
 }
@@ -179,6 +179,7 @@ section header .time-icons i {
   height: calc(100% - 80px);
   width: 100%;
   padding: 20px;
+  overflow: auto;
 }
 
 .chat-room .read-chat .texts {
