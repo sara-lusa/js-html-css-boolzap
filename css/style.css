@@ -22,15 +22,14 @@ body {
 }
 
 .boolzap {
-  width: 600px;
-  height: 500px;
-  background-color: coral;
+  min-width: 900px;
+  flex-basis: 65%;
+  height: calc(100vh - 10%);
 }
 
 main {
   width: 100%;
   height: 100%;
-  background-color: gold;
   display: flex;
 }
 
@@ -49,7 +48,7 @@ section.chat-room {
 section header {
   height: 80px;
   width: 100%;
-  background-color: brown;
+  background-color: gold;
   border: 1px solid black;
 }
 /* FINE STILI GENERALI */
