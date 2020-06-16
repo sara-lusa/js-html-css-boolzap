@@ -91,7 +91,8 @@ section header .time-icons i {
 }
 /* FINE STILI GENERALI */
 
-/* TEMPLATE(?) */
+/* CLASSI DA RIUTILIZZARE */
+/* Singolo contatto */
 .single-contact {
   height: 100%;
   padding: 10px;
@@ -130,15 +131,26 @@ section header .time-icons i {
   color: #c1d0bb;
   font-size: 13px;
 }
-/* FINE TEMPLATE(?) */
+/* Fine Singolo contatto */
+/* FINE CLASSI DA RIUTILIZZARE */
 
 
 /* SECTION SIDE-BAR */
+.contacts {
+  height: calc(100% - 80px);
+}
+
+.contacts ul {
+  height: calc(100% - 110px);
+  overflow: auto;
+}
+
 .contacts ul li {
   height: 60px;
 }
 #notifica {
   background-color: #8edafc;
+  height: 60px;
 }
 
 #notifica .no-ring {
@@ -157,6 +169,7 @@ section header .time-icons i {
 .search {
   background-color: #fafafa;
   padding: 5px;
+  height: 50px;
 }
 
 .search i {
@@ -164,7 +177,7 @@ section header .time-icons i {
   background: white;
   height: 100%;
   text-align: center;
-  padding-top: 15px;
+  padding: 10px;
   margin-right: 0;
 }
 /* FINE SECTION SIDE-BAR */
