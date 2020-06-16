@@ -219,10 +219,22 @@ section header .time-icons i {
   border-radius: 8px;
   width: 35%;
   margin: 10px 0;
+  position: relative;
 }
 
 .single-text .time {
   text-align: end;
+}
+
+.single-text .dropdown-arrow {
+  right: 10px;
+  top: 6px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.single-text .dropdown-arrow.hide {
+  display: none;
 }
 
 .green-text {
@@ -249,8 +261,6 @@ section header .time-icons i {
   font-size: 24px;
   color: #6b7376;
 }
-
-
 /* FINE SECTION CHAT-ROOM */
 
 /* TEMPLATE */
