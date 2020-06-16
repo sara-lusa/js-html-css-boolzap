@@ -45,18 +45,7 @@ main {
   display: flex;
 }
 
-/* section {
-
-} */
-.search input,
-.write-chat input {
-  width: 80%;
-  height: 100%;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-}
-
+/* SECTIONS */
 section.side-bar {
   height: 100%;
   flex-basis: 35%;
@@ -76,6 +65,10 @@ section header {
   background-color: #eaeaea;
 }
 
+section header .single-contact {
+  border-bottom: none;
+}
+
 section header .name-subtitle {
   padding: 10px;
 }
@@ -88,6 +81,15 @@ section header .time-icons {
 
 section header .time-icons i {
   margin: 0 5px;
+}
+
+.search input,
+.write-chat input {
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
 }
 /* FINE STILI GENERALI */
 
@@ -148,6 +150,16 @@ section header .time-icons i {
 .contacts ul li {
   height: 60px;
 }
+
+.contacts ul li:hover {
+  background-color: lightgrey;
+}
+
+.contacts ul li:hover .subtitle,
+.contacts ul li:hover .time {
+  color: white;
+}
+
 #notifica {
   background-color: #8edafc;
   height: 60px;
