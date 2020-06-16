@@ -15,7 +15,7 @@ body {
   min-width: 900px;
   width: 100%;
   height: 100vh;
-  background-color: lightgreen;
+  background-image: linear-gradient(#dcdbd1, #d7dbd7,#d4dbdb);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,22 +33,48 @@ main {
   display: flex;
 }
 
+/* section {
+
+} */
+
 section.side-bar {
   height: 100%;
-  background-color: lightblue;
   flex-basis: 35%;
+  background-color: white;
 }
 
 section.chat-room {
   height: 100%;
-  background-color: pink;
   flex-basis: 65%;
+  background-image: url(../img/mine.jpg);
+  border-left: 1px solid #e0dfdf;
 }
 
 section header {
   height: 80px;
   width: 100%;
-  background-color: gold;
-  border: 1px solid black;
+  background-color: #eaeaea;
 }
 /* FINE STILI GENERALI */
+
+/* SECTION CHAT-ROOM */
+.chat-room .chat {
+  width: 100%;
+  height: 100%;
+}
+
+.chat-room .read-chat {
+  height: calc(100% - 160px);
+  width: 100%;
+
+}
+
+.chat-room .write-chat {
+  height: 80px;
+  width: 100%;
+  background-color: #f3eeeb;
+  /* position: fixed;
+  bottom: 0;
+  right: 0; */
+}
+/* FINE SECTION CHAT-ROOM */
