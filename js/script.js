@@ -14,14 +14,20 @@ $(document).ready(function() {
     }
   });
 
+  // Appena scrivo dei caratteri nell'input,
+  // Parte una verifica su ogni nome dei contatti
   $('.search input').keyup(function() {
     $('.contacts ul li .name').each(verificaSeStringaPresente);
   });
 
+  // Quando passo con il cursor su un messaggio, compare la freccia
+  // Che prima aveva classe hide
   $('.single-text').mouseenter(function() {
     $(this).children('.dropdown-arrow').removeClass('hide');
   });
 
+  // Quando esco con il cursor da un messaggio, scompare la freccia
+  // a cui avevo rimosso la classe hide
   $('.single-text').mouseleave(function() {
     $(this).children('.dropdown-arrow').addClass('hide');
   });
@@ -36,7 +42,7 @@ $(document).ready(function() {
 // FUNZIONI
 
 // Function che serve a trascrivere del testo da un input ad un template
-// dell'html clonato, per poi appenderlo ad una lista
+// dell'html clonato, per poi appenderlo con classe .green-text ad una lista
 // NESSUN argomento
 // NESSUN return
 function scriviEInviaMessaggio() {
@@ -74,6 +80,10 @@ function scriviEInviaMessaggio() {
 
 }
 
+// Function che serve a trascrivere del testo da un input ad un template
+// dell'html clonato, per poi appenderlo con classe .white-text ad una lista
+// NESSUN argomento
+// NESSUN return
 function riceviMessaggio() {
   // Clono il template del messaggio
   var cloneText = $('.template li').clone();
@@ -111,17 +121,32 @@ function aggiungiZero(number) {
 }
 
 // Function per cercare una stringa dentro ad un'altra stringa
+// NESSUN argomento
+// NESSUN return
 function verificaSeStringaPresente() {
+
+  // Dichiaro in una variabile(valoreRicerca) il testo digitato nell'input
   var valoreRicerca = $('.search input').val();
+
+  // Standardizzo valoreRicerca e i valori in cui dovrò poi cercare la stringa stessa(nomeListaStandardizzato)
   var valoreRicercaStandardizzato = valoreRicerca.toLowerCase();
   var nomeListaStandardizzato = $(this).text().toLowerCase();
 
+  // Se nel nomeListaStandardizzato non compare valoreRicercaStandardizzato,
+  // Aggiungo la classe hide per far scomparire nomeListaStandardizzato
   if (nomeListaStandardizzato.includes(valoreRicerca) === false) {
     $(this).parents('.single-contact').addClass('hide');
-    // console.log(nomeListaStandardizzato.includes(valoreRicerca));
-  } else if (nomeListaStandardizzato.includes(valoreRicerca) === true) {
+  }
+
+  // Se nel nomeListaStandardizzato compare valoreRicercaStandardizzato,
+  // Rimuovo la classe hide, se fosse presente, altrimenti non faccio nulla
+  else if (nomeListaStandardizzato.includes(valoreRicerca) === true) {
     $(this).parents('.single-contact').removeClass('hide');
-  } else if (valoreRicerca === '') {
+  }
+
+  // Se l'input è vuoto (quindi valoreRicerca equivale ad una stringa vuota)
+  // Rimuovo tutte le classi hide ancora presenti
+  else if (valoreRicerca === '') {
     $('.contacts ul li').removeClass('hide');
   }
 
