@@ -3,7 +3,7 @@ $(document).ready(function() {
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
-    window.setTimeout(riceviMessaggio, 1000);
+    // window.setTimeout(riceviMessaggio, 1000);
 
   });
 
@@ -11,12 +11,13 @@ $(document).ready(function() {
   $(document).keypress(function(event) {
     if (event.which === 13) {
       scriviEInviaMessaggio();
-      window.setTimeout(riceviMessaggio, 1000);
+      // window.setTimeout(riceviMessaggio, 1000);
     }
-
-
   });
 
+  $('.search input').keyup(function() {
+    $('.contacts ul li .name').each(verificaSeStringaPresente);
+  });
 
 });
 
@@ -55,6 +56,8 @@ function scriviEInviaMessaggio() {
 
     // Rimuovo il contenuto dall'input iniziale
     $('.write-chat input').val('');
+
+    window.setTimeout(riceviMessaggio, 1000);
   }
 
 }
@@ -93,4 +96,21 @@ function aggiungiZero(number) {
   }
 
   return newNumber;
+}
+
+// Function per cercare una stringa dentro ad un'altra stringa
+function verificaSeStringaPresente() {
+  var valoreRicerca = $('.search input').val();
+  var valoreRicercaStandardizzato = valoreRicerca.toLowerCase();
+  var nomeListaStandardizzato = $(this).text().toLowerCase();
+
+  if (nomeListaStandardizzato.includes(valoreRicerca) === false) {
+    $(this).parents('.single-contact').addClass('hide');
+    // console.log(nomeListaStandardizzato.includes(valoreRicerca));
+  } else if (nomeListaStandardizzato.includes(valoreRicerca) === true) {
+    $(this).parents('.single-contact').removeClass('hide');
+  } else if (valoreRicerca === '') {
+    $('.contacts ul li').removeClass('hide');
+  }
+
 }

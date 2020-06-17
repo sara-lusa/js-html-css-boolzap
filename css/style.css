@@ -285,6 +285,12 @@ section header .time-icons i {
 /* FINE SECTION CHAT-ROOM */
 /* FINE MAIN */
 
+/* Classi utili */
+.hide {
+  display: none;
+}
+/* Fine Classi utili */
+
 /* TEMPLATE */
 .template {
   display: none;
