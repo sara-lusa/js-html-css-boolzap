@@ -18,6 +18,14 @@ $(document).ready(function() {
     $('.contacts ul li .name').each(verificaSeStringaPresente);
   });
 
+  $('.single-text').mouseenter(function() {
+    $(this).children('.dropdown-arrow').removeClass('hide');
+  });
+
+  $('.single-text').mouseleave(function() {
+    $(this).children('.dropdown-arrow').addClass('hide');
+  });
+
   //// FUNZIONE DA AGGIUNGERE
   // // Scrivo il valore dell'input anche nel sottotitolo del contatto
   // var attributoChat = $('.read-chat .texts').attr();
