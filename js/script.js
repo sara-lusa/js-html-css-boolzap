@@ -23,25 +23,32 @@ $(document).ready(function() {
 function scriviEInviaMessaggio() {
   // Creo una variabile con il valore dell'input(messaggio)
   var valoreText = $('.write-chat input').val();
-  // Clono il template del messaggio
-  var cloneText = $('.template li').clone();
 
-  // Creo la variabile con le ore e minuti correnti
-  var d = new Date();
-  var minutes = d.getMinutes();
-  var hours = d.getHours();
-  var currentTime = hours.toString() + ':' + minutes.toString();
+  if(valoreText != ''){
+    // Clono il template del messaggio
+    var cloneText = $('.template li').clone();
 
-  // Scrivo all'interno del clone
-  cloneText.children('p:first-child').text(valoreText);
-  cloneText.children('p.time').text(currentTime);
+    // Creo la variabile con le ore e minuti correnti
+    var d = new Date();
+    var minutes = d.getMinutes();
+    var hours = d.getHours();
+    var currentTime = hours.toString() + ':' + minutes.toString();
 
-  // Aggiungo la classe css per dare gli stili
-  cloneText.addClass('green-text');
+    // Scrivo all'interno del clone
+    cloneText.children('p:first-child').text(valoreText);
+    cloneText.children('p.time').text(currentTime);
 
-  // Appendo nell'html il clone del messaggio
-  $('.read-chat ul').append(cloneText);
+    // Aggiungo la classe css per dare gli stili
+    cloneText.addClass('green-text');
 
-  // Rimuovo il contenuto dall'input iniziale
-  $('.write-chat input').val('');
+    // Appendo nell'html il clone del messaggio
+    $('.read-chat ul').append(cloneText);
+
+    // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
+    $('.read-chat').scrollTop($('.read-chat').height());
+
+    // Rimuovo il contenuto dall'input iniziale
+    $('.write-chat input').val('');
+  }
+
 }

@@ -170,13 +170,8 @@ section header .time-icons i {
 }
 
 .contacts ul li:hover {
-  background-color: lightgrey;
+  background-color: #eaebeb;
   cursor: pointer;
-}
-
-.contacts ul li:hover .subtitle,
-.contacts ul li:hover .time {
-  color: white;
 }
 
 #notifica {
