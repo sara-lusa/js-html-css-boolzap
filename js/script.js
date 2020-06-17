@@ -4,10 +4,11 @@ $(document).ready(function() {
   $('.write-chat i.send').click(scriviEInviaMessaggio);
 
   // Evento al click del tasto invia della tastiera
-  $(document).keypress(function() {
+  $(document).keypress(function(event) {
     if (event.which === 13) {
       scriviEInviaMessaggio();
     }
+
 
   });
 
@@ -32,7 +33,7 @@ function scriviEInviaMessaggio() {
     var d = new Date();
     var minutes = d.getMinutes();
     var hours = d.getHours();
-    var currentTime = hours.toString() + ':' + minutes.toString();
+    var currentTime = aggiungiZero(hours) + ':' + aggiungiZero(minutes);
 
     // Scrivo all'interno del clone
     cloneText.children('p:first-child').text(valoreText);
@@ -51,4 +52,16 @@ function scriviEInviaMessaggio() {
     $('.write-chat input').val('');
   }
 
+}
+
+// Function che appende uno zero davanti ai numeri inferiori a 10
+// Argomento: number, un numero
+// return: newNumber, il numero immutato oppure con lo zero aggiunto
+function aggiungiZero(number) {
+  var newNumber = number;
+  if(number < 10) {
+    newNumber = '0' + number;
+  }
+
+  return newNumber;
 }
