@@ -4,7 +4,6 @@ $(document).ready(function() {
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
     // window.setTimeout(riceviMessaggio, 1000);
-
   });
 
   // Evento al click del tasto invia della tastiera
@@ -18,6 +17,11 @@ $(document).ready(function() {
   $('.search input').keyup(function() {
     $('.contacts ul li .name').each(verificaSeStringaPresente);
   });
+
+  //// FUNZIONE DA AGGIUNGERE
+  // // Scrivo il valore dell'input anche nel sottotitolo del contatto
+  // var attributoChat = $('.read-chat .texts').attr();
+  // $('.single-contact .name-subtitle .subtitle').text(valoreText);
 
 });
 
