@@ -54,11 +54,18 @@ $(document).ready(function() {
 
     var selettoreChat = '.texts[data-texts="' + singleContactAttr + '"]';
 
-    $(selettoreChat).siblings('.texts').addClass('hide');
-    $(selettoreChat).removeClass('hide');
+    $(selettoreChat).siblings('.texts').addClass('hide').removeClass('active');
+    $(selettoreChat).removeClass('hide').addClass('active');
 
     $('.chat-room header .avatar img').attr('src', singleContactImgAttr);
     $('.chat-room header .name').text(singleContactName);
+
+    // var valoreTextSend = $('.write-chat input').val();
+    // var textSubtitle = $(this).find('.subtitle');
+    //
+    // $('.write-chat i.send').click(function() {
+    //   textSubtitle.text(valoreTextSend);
+    // });
   });
 
   //// FUNZIONE DA AGGIUNGERE
@@ -96,7 +103,7 @@ function scriviEInviaMessaggio() {
     cloneText.addClass('green-text');
 
     // Appendo nell'html il clone del messaggio
-    $('.read-chat ul.texts').append(cloneText);
+    $('.read-chat ul.texts.active').append(cloneText);
 
     // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
     $('.read-chat').scrollTop($('.read-chat').height());
@@ -131,7 +138,7 @@ function riceviMessaggio() {
   cloneText.addClass('white-text');
 
   // Appendo nell'html il clone del messaggio
-  $('.read-chat ul.texts').append(cloneText);
+  $('.read-chat ul.texts.active').append(cloneText);
 
   // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
   $('.read-chat').scrollTop($('.read-chat').height());

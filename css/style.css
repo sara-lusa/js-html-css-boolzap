@@ -326,6 +326,10 @@ section header .time-icons i {
 .hide {
   display: none;
 }
+
+.active {
+  display: block;
+}
 /* Fine Classi utili */
 
 /* TEMPLATE */
