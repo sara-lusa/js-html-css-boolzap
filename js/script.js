@@ -32,11 +32,15 @@ $(document).ready(function() {
     $(this).children('.dropdown-arrow').addClass('hide');
   });
 
+  // Quando clicco sulla icona-freccia dropdown-arrow, compare
+  // una tendina dropdown, e tutte quelle già aperte si chiudono
   $(document).on('click', '.dropdown-arrow', function() {
     $(this).parents('.single-text').siblings('.single-text').find('.dropdown').addClass('hide')
     $(this).siblings('.dropdown').toggleClass('hide');
   });
 
+  // Se clicco sulla li.delete, 'Cancella messaggio', l'intero messaggio(single-text),
+  // Viene rimosso dalla pagina corrente
   $(document).on('click', '.dropdown li.delete', function() {
     $(this).parents('.single-text').remove();
   });
