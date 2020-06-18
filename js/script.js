@@ -3,14 +3,14 @@ $(document).ready(function() {
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
-    // window.setTimeout(riceviMessaggio, 1000);
+
   });
 
   // Evento al click del tasto invia della tastiera
   $(document).keypress(function(event) {
     if (event.which === 13) {
       scriviEInviaMessaggio();
-      // window.setTimeout(riceviMessaggio, 1000);
+
     }
   });
 
@@ -60,18 +60,8 @@ $(document).ready(function() {
     $('.chat-room header .avatar img').attr('src', singleContactImgAttr);
     $('.chat-room header .name').text(singleContactName);
 
-    // var valoreTextSend = $('.write-chat input').val();
-    // var textSubtitle = $(this).find('.subtitle');
-    //
-    // $('.write-chat i.send').click(function() {
-    //   textSubtitle.text(valoreTextSend);
-    // });
-  });
 
-  //// FUNZIONE DA AGGIUNGERE
-  // // Scrivo il valore dell'input anche nel sottotitolo del contatto
-  // var attributoChat = $('.read-chat .texts').attr();
-  // $('.single-contact .name-subtitle .subtitle').text(valoreText);
+  });
 
 });
 
@@ -111,6 +101,12 @@ function scriviEInviaMessaggio() {
     // Rimuovo il contenuto dall'input iniziale
     $('.write-chat input').val('');
 
+    // // Scrivo il valore dell'input anche nel sottotitolo del contatto
+    var attributChat = $('.read-chat ul.texts.active').attr('data-texts');
+    var selettoreContatto = '.single-contact[data-contact="' + attributChat + '"]'
+
+    $(selettoreContatto).find('.subtitle').text(valoreText);
+
     window.setTimeout(riceviMessaggio, 1000);
   }
 
@@ -142,6 +138,12 @@ function riceviMessaggio() {
 
   // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
   $('.read-chat').scrollTop($('.read-chat').height());
+
+  // // Scrivo il valore dell'input anche nel sottotitolo del contatto
+  var attributChat = $('.read-chat ul.texts.active').attr('data-texts');
+  var selettoreContatto = '.single-contact[data-contact="' + attributChat + '"]'
+
+  $(selettoreContatto).find('.subtitle').text('ok');
 }
 
 // Function che appende uno zero davanti ai numeri inferiori a 10
