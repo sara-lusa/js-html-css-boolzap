@@ -48,12 +48,17 @@ $(document).ready(function() {
   // Se clicco sui singoli contatti, visualizzo la chat corrispondente sulla read-chat
   $('.single-contact').click(function() {
     var singleContactAttr = $(this).attr('data-contact');
-    // console.log(singleContactAttr);
+    var singleContactImgAttr = $(this).find('img').attr('src');
+    var singleContactName = $(this).find('.name').text();
 
-    var selettore = '.texts[data-texts="' + singleContactAttr + '"]';
-    // console.log(selettore);
-    $(selettore).siblings('.texts').addClass('hide');
-    $(selettore).removeClass('hide');
+
+    var selettoreChat = '.texts[data-texts="' + singleContactAttr + '"]';
+
+    $(selettoreChat).siblings('.texts').addClass('hide');
+    $(selettoreChat).removeClass('hide');
+
+    $('.chat-room header .avatar img').attr('src', singleContactImgAttr);
+    $('.chat-room header .name').text(singleContactName);
   });
 
   //// FUNZIONE DA AGGIUNGERE
