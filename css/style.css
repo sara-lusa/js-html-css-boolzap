@@ -256,6 +256,7 @@ section header .time-icons i {
   right: 10px;
   top: 6px;
   position: absolute;
+  /* display: none; */
 }
 
 .single-text .dropdown-arrow.hide {
@@ -296,6 +297,10 @@ section header .time-icons i {
   width: 170px;
   padding: 7px;
   border: 1px solid #c1d0bb;
+  z-index: 10;
+}
+
+.single-text .dropdown.hide {
   display: none;
 }
 

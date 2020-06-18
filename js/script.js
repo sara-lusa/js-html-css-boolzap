@@ -22,14 +22,19 @@ $(document).ready(function() {
 
   // Quando passo con il cursor su un messaggio, compare la freccia
   // Che prima aveva classe hide
-  $('.single-text').mouseenter(function() {
+  $(document).on('mouseenter', '.single-text', function() {
     $(this).children('.dropdown-arrow').removeClass('hide');
   });
 
-  // Quando esco con il cursor da un messaggio, scompare la freccia
-  // a cui avevo rimosso la classe hide
-  $('.single-text').mouseleave(function() {
+  // // Quando esco con il cursor da un messaggio, scompare la freccia
+  // // a cui avevo rimosso la classe hide
+  $(document).on('mouseleave', '.single-text', function() {
     $(this).children('.dropdown-arrow').addClass('hide');
+  });
+
+  $(document).on('click', '.dropdown-arrow', function() {
+    $(this).parents('.single-text').siblings('.single-text').find('.dropdown').addClass('hide')
+    $(this).siblings('.dropdown').toggleClass('hide');
   });
 
   //// FUNZIONE DA AGGIUNGERE
