@@ -1,9 +1,16 @@
 $(document).ready(function() {
 
+  $('.write-chat input').click(function() {
+    $('.write-chat .sent-icons i:last-child').removeClass('hide');
+    $('.write-chat .sent-icons i:first-child').addClass('hide');
+  });
+
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
 
+    $('.write-chat .sent-icons i:last-child').addClass('hide');
+    $('.write-chat .sent-icons i:first-child').removeClass('hide');
   });
 
   // Evento al click del tasto invia della tastiera
@@ -11,6 +18,8 @@ $(document).ready(function() {
     if (event.which === 13) {
       scriviEInviaMessaggio();
 
+      $('.write-chat .sent-icons i:last-child').addClass('hide');
+      $('.write-chat .sent-icons i:first-child').removeClass('hide');
     }
   });
 
