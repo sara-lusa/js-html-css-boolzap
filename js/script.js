@@ -37,6 +37,10 @@ $(document).ready(function() {
     $(this).siblings('.dropdown').toggleClass('hide');
   });
 
+  $(document).on('click', '.dropdown li.delete', function() {
+    $(this).parents('.single-text').remove();
+  });
+
   //// FUNZIONE DA AGGIUNGERE
   // // Scrivo il valore dell'input anche nel sottotitolo del contatto
   // var attributoChat = $('.read-chat .texts').attr();

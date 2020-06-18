@@ -309,6 +309,11 @@ section header .time-icons i {
   height: 30px;
 }
 
+.single-text .dropdown li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .single-text .dropdown li.delete {
   border-top: 1px solid #c1d0bb;
 }
