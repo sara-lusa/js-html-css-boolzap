@@ -53,7 +53,7 @@ $(document).ready(function() {
     var selettore = '.texts[data-texts="' + singleContactAttr + '"]';
     // console.log(selettore);
     $(selettore).siblings('.texts').addClass('hide');
-    $(selettore).toggleClass('hide');
+    $(selettore).removeClass('hide');
   });
 
   //// FUNZIONE DA AGGIUNGERE
