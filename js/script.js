@@ -17,7 +17,7 @@ $(document).ready(function() {
   // Appena scrivo dei caratteri nell'input,
   // Parte una verifica su ogni nome dei contatti
   $('.search input').keyup(function() {
-    $('.contacts ul li .name').each(verificaSeStringaPresente);
+    $('.contacts .name').each(verificaSeStringaPresente);
   });
 
   // Quando passo con il cursor su un messaggio, compare la freccia
@@ -51,7 +51,7 @@ function scriviEInviaMessaggio() {
 
   if(valoreText != ''){
     // Clono il template del messaggio
-    var cloneText = $('.template li').clone();
+    var cloneText = $('.template .single-text').clone();
 
     // Creo la variabile con le ore e minuti correnti
     var d = new Date();
@@ -67,7 +67,7 @@ function scriviEInviaMessaggio() {
     cloneText.addClass('green-text');
 
     // Appendo nell'html il clone del messaggio
-    $('.read-chat ul').append(cloneText);
+    $('.read-chat ul.texts').append(cloneText);
 
     // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
     $('.read-chat').scrollTop($('.read-chat').height());
@@ -86,7 +86,7 @@ function scriviEInviaMessaggio() {
 // NESSUN return
 function riceviMessaggio() {
   // Clono il template del messaggio
-  var cloneText = $('.template li').clone();
+  var cloneText = $('.template .single-text').clone();
 
   // Creo la variabile con le ore e minuti correnti
   var d = new Date();
@@ -102,7 +102,7 @@ function riceviMessaggio() {
   cloneText.addClass('white-text');
 
   // Appendo nell'html il clone del messaggio
-  $('.read-chat ul').append(cloneText);
+  $('.read-chat ul.texts').append(cloneText);
 
   // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
   $('.read-chat').scrollTop($('.read-chat').height());

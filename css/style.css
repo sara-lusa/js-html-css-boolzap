@@ -286,6 +286,29 @@ section header .time-icons i {
   font-size: 24px;
   color: #6b7376;
 }
+
+.single-text .dropdown {
+  background-color: white;
+  position: absolute;
+  top: 64%;
+  left: 11%;
+  height: 70px;
+  width: 170px;
+  padding: 7px;
+  border: 1px solid #c1d0bb;
+  display: none;
+}
+
+.single-text .dropdown li {
+  padding: 6px 0;
+  height: 30px;
+}
+
+.single-text .dropdown li.delete {
+  border-top: 1px solid #c1d0bb;
+}
+
+
 /* FINE SECTION CHAT-ROOM */
 /* FINE MAIN */
 
@@ -299,4 +322,6 @@ section header .time-icons i {
 .template {
   display: none;
 }
+
+
 /* FINE TEMPLATE */
