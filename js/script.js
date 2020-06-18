@@ -45,6 +45,17 @@ $(document).ready(function() {
     $(this).parents('.single-text').remove();
   });
 
+  // Se clicco sui singoli contatti, visualizzo la chat corrispondente sulla read-chat
+  $('.single-contact').click(function() {
+    var singleContactAttr = $(this).attr('data-contact');
+    // console.log(singleContactAttr);
+
+    var selettore = '.texts[data-texts="' + singleContactAttr + '"]';
+    // console.log(selettore);
+    $(selettore).siblings('.texts').addClass('hide');
+    $(selettore).toggleClass('hide');
+  });
+
   //// FUNZIONE DA AGGIUNGERE
   // // Scrivo il valore dell'input anche nel sottotitolo del contatto
   // var attributoChat = $('.read-chat .texts').attr();
