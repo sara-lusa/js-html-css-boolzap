@@ -1,16 +1,26 @@
 $(document).ready(function() {
 
-  $('.write-chat input').click(function() {
+  $('.write-chat input').focus(function() {
     $('.write-chat .sent-icons i:last-child').removeClass('hide');
     $('.write-chat .sent-icons i:first-child').addClass('hide');
+  });
+
+  $('.write-chat input').blur(function() {
+    $('.write-chat .sent-icons i:last-child').addClass('hide');
+    $('.write-chat .sent-icons i:first-child').removeClass('hide');
+  });
+
+  $('.write-chat input').click(function() {
+    // $('.write-chat .sent-icons i:last-child').removeClass('hide');
+    // $('.write-chat .sent-icons i:first-child').addClass('hide');
   });
 
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
 
-    $('.write-chat .sent-icons i:last-child').addClass('hide');
-    $('.write-chat .sent-icons i:first-child').removeClass('hide');
+    // $('.write-chat .sent-icons i:last-child').addClass('hide');
+    // $('.write-chat .sent-icons i:first-child').removeClass('hide');
   });
 
   // Evento al click del tasto invia della tastiera
@@ -188,19 +198,19 @@ function verificaSeStringaPresente() {
 
   // Se nel nomeListaStandardizzato non compare valoreRicercaStandardizzato,
   // Aggiungo la classe hide per far scomparire nomeListaStandardizzato
-  if (nomeListaStandardizzato.includes(valoreRicerca) === false) {
+  if (nomeListaStandardizzato.includes(valoreRicercaStandardizzato) === false) {
     $(this).parents('.single-contact').addClass('hide');
   }
 
   // Se nel nomeListaStandardizzato compare valoreRicercaStandardizzato,
   // Rimuovo la classe hide, se fosse presente, altrimenti non faccio nulla
-  else if (nomeListaStandardizzato.includes(valoreRicerca) === true) {
+  else if (nomeListaStandardizzato.includes(valoreRicercaStandardizzato) === true) {
     $(this).parents('.single-contact').removeClass('hide');
   }
 
   // Se l'input è vuoto (quindi valoreRicerca equivale ad una stringa vuota)
   // Rimuovo tutte le classi hide ancora presenti
-  else if (valoreRicerca === '') {
+  else if (valoreRicercaStandardizzato === '') {
     $(this).parents('.single-contact').removeClass('hide');
   }
 
