@@ -26,7 +26,7 @@ $(document).ready(function() {
   // Appena scrivo dei caratteri nell'input,
   // Parte una verifica su ogni nome dei contatti
   $('.search input').keyup(function() {
-    $('.contacts .name').each(verificaSeStringaPresente);
+    $('.contacts .single-contact .name').each(verificaSeStringaPresente);
   });
 
   // Quando passo con il cursor su un messaggio, compare la freccia
@@ -56,6 +56,10 @@ $(document).ready(function() {
 
   // Se clicco sui singoli contatti, visualizzo la chat corrispondente sulla read-chat
   $('.single-contact').click(function() {
+
+    $('.single-contact').removeClass('selected');
+    $(this).addClass('selected');
+
     var singleContactAttr = $(this).attr('data-contact');
     var singleContactImgAttr = $(this).find('img').attr('src');
     var singleContactName = $(this).find('.name').text();
@@ -178,6 +182,9 @@ function verificaSeStringaPresente() {
   // Standardizzo valoreRicerca e i valori in cui dovrò poi cercare la stringa stessa(nomeListaStandardizzato)
   var valoreRicercaStandardizzato = valoreRicerca.toLowerCase();
   var nomeListaStandardizzato = $(this).text().toLowerCase();
+  console.log(valoreRicercaStandardizzato);
+  console.log(nomeListaStandardizzato);
+
 
   // Se nel nomeListaStandardizzato non compare valoreRicercaStandardizzato,
   // Aggiungo la classe hide per far scomparire nomeListaStandardizzato
@@ -194,7 +201,7 @@ function verificaSeStringaPresente() {
   // Se l'input è vuoto (quindi valoreRicerca equivale ad una stringa vuota)
   // Rimuovo tutte le classi hide ancora presenti
   else if (valoreRicerca === '') {
-    $('.contacts ul li').removeClass('hide');
+    $(this).parents('.single-contact').removeClass('hide');
   }
 
 }

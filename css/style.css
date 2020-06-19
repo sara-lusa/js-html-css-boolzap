@@ -137,6 +137,10 @@ section header .single-contact {
   border-bottom: none;
 }
 
+.single-contact.selected {
+  background-color: #eaebeb;
+}
+
 section header .time-icons {
   line-height: 60px;
   font-size: 20px;
@@ -177,6 +181,7 @@ section header .time-icons i {
 #notifica {
   background-color: #8edafc;
   height: 60px;
+  padding: 10px;
 }
 
 #notifica .name {
