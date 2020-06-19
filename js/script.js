@@ -1,26 +1,18 @@
 $(document).ready(function() {
 
   $('.write-chat input').focus(function() {
-    $('.write-chat .sent-icons i:last-child').removeClass('hide');
-    $('.write-chat .sent-icons i:first-child').addClass('hide');
+    $('.write-chat .sent-icons i.send').removeClass('fa-microphone').addClass('fa-paper-plane');
   });
 
   $('.write-chat input').blur(function() {
-    $('.write-chat .sent-icons i:last-child').addClass('hide');
-    $('.write-chat .sent-icons i:first-child').removeClass('hide');
-  });
-
-  $('.write-chat input').click(function() {
-    // $('.write-chat .sent-icons i:last-child').removeClass('hide');
-    // $('.write-chat .sent-icons i:first-child').addClass('hide');
+    $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
   });
 
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
 
-    // $('.write-chat .sent-icons i:last-child').addClass('hide');
-    // $('.write-chat .sent-icons i:first-child').removeClass('hide');
+    // $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
   });
 
   // Evento al click del tasto invia della tastiera
@@ -28,8 +20,7 @@ $(document).ready(function() {
     if (event.which === 13) {
       scriviEInviaMessaggio();
 
-      $('.write-chat .sent-icons i:last-child').addClass('hide');
-      $('.write-chat .sent-icons i:first-child').removeClass('hide');
+      // $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
     }
   });
 
@@ -119,14 +110,14 @@ function scriviEInviaMessaggio() {
     $('.read-chat ul.texts.active').append(cloneText);
 
     // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
-    $('.read-chat').scrollTop($('.read-chat').height());
+    $('.read-chat').scrollTop($('.read-chat').prop('scrollHeight'));
 
     // Rimuovo il contenuto dall'input iniziale
     $('.write-chat input').val('');
 
     // // Scrivo il valore dell'input anche nel sottotitolo del contatto
     var attributChat = $('.read-chat ul.texts.active').attr('data-texts');
-    var selettoreContatto = '.single-contact[data-contact="' + attributChat + '"]'
+    var selettoreContatto = '.single-contact[data-contact="' + attributChat + '"]';
 
     $(selettoreContatto).find('.subtitle').text(valoreText);
 
@@ -160,7 +151,7 @@ function riceviMessaggio() {
   $('.read-chat ul.texts.active').append(cloneText);
 
   // La pagina fa lo scroll fino al nuovo scriviEInviaMessaggio
-  $('.read-chat').scrollTop($('.read-chat').height());
+  $('.read-chat').scrollTop($('.read-chat').prop('scrollHeight'));
 
   // // Scrivo il valore dell'input anche nel sottotitolo del contatto
   var attributChat = $('.read-chat ul.texts.active').attr('data-texts');
