@@ -1,9 +1,13 @@
 $(document).ready(function() {
 
+  // Se faccio .focus sull'input per scrivere messaggio
+  // l'icona per inviare compare
   $('.write-chat input').focus(function() {
     $('.write-chat .sent-icons i.send').removeClass('fa-microphone').addClass('fa-paper-plane');
   });
 
+  // Se faccio .blur furoi dall'input per scrivere messaggio
+  // l'icona per inviare scompare
   $('.write-chat input').blur(function() {
     $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
   });
@@ -11,16 +15,12 @@ $(document).ready(function() {
   // Evento al click dell'icona invia
   $('.write-chat i.send').click(function() {
     scriviEInviaMessaggio();
-
-    // $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
   });
 
   // Evento al click del tasto invia della tastiera
   $(document).keypress(function(event) {
     if (event.which === 13) {
       scriviEInviaMessaggio();
-
-      // $('.write-chat .sent-icons i.send').addClass('fa-microphone').removeClass('fa-paper-plane');
     }
   });
 
@@ -58,19 +58,30 @@ $(document).ready(function() {
   // Se clicco sui singoli contatti, visualizzo la chat corrispondente sulla read-chat
   $('.single-contact').click(function() {
 
+    // Al contatto selezionato si colora il background, aggiungendo
+    // la classe .selected
     $('.single-contact').removeClass('selected');
     $(this).addClass('selected');
 
+    // Dichiaro le varibili utili
+    // L'attributo dell'elemento che rappresenta il contatto cliccato
     var singleContactAttr = $(this).attr('data-contact');
+    // L'attributo dell'immagine contatto cliccato
     var singleContactImgAttr = $(this).find('img').attr('src');
+    // Il testo della classe .name(quindi il nome) del contatto cliccato
     var singleContactName = $(this).find('.name').text();
 
-
+    // Dichiaro il selettore: l'attributo è così dinamico
     var selettoreChat = '.texts[data-texts="' + singleContactAttr + '"]';
 
-    $(selettoreChat).siblings('.texts').addClass('hide').removeClass('active');
-    $(selettoreChat).removeClass('hide').addClass('active');
+    // Alle chat che non sono state cliccate, viene tolta la classe .active
+    // Per renderle così non visibili
+    $(selettoreChat).siblings('.texts').removeClass('active');
+    // Alla chat cliccata invece, viene aggiunta la classe .active
+    // Per renderla così visibile
+    $(selettoreChat).addClass('active');
 
+    // Vengono poi modificati l'img e il nome che si trovano nell'header della chat-room
     $('.chat-room header .avatar img').attr('src', singleContactImgAttr);
     $('.chat-room header .name').text(singleContactName);
 
@@ -183,9 +194,6 @@ function verificaSeStringaPresente() {
   // Standardizzo valoreRicerca e i valori in cui dovrò poi cercare la stringa stessa(nomeListaStandardizzato)
   var valoreRicercaStandardizzato = valoreRicerca.toLowerCase();
   var nomeListaStandardizzato = $(this).text().toLowerCase();
-  console.log(valoreRicercaStandardizzato);
-  console.log(nomeListaStandardizzato);
-
 
   // Se nel nomeListaStandardizzato non compare valoreRicercaStandardizzato,
   // Aggiungo la classe hide per far scomparire nomeListaStandardizzato
@@ -196,12 +204,6 @@ function verificaSeStringaPresente() {
   // Se nel nomeListaStandardizzato compare valoreRicercaStandardizzato,
   // Rimuovo la classe hide, se fosse presente, altrimenti non faccio nulla
   else if (nomeListaStandardizzato.includes(valoreRicercaStandardizzato) === true) {
-    $(this).parents('.single-contact').removeClass('hide');
-  }
-
-  // Se l'input è vuoto (quindi valoreRicerca equivale ad una stringa vuota)
-  // Rimuovo tutte le classi hide ancora presenti
-  else if (valoreRicercaStandardizzato === '') {
     $(this).parents('.single-contact').removeClass('hide');
   }
 
