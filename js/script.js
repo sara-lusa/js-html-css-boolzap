@@ -31,22 +31,22 @@ $(document).ready(function() {
   });
 
   // Quando passo con il cursor su un messaggio, compare la freccia
-  // Che prima aveva classe hide
+  // perchè aggiungo la classe active
   $(document).on('mouseenter', '.single-text', function() {
-    $(this).children('.dropdown-arrow').removeClass('hide');
+    $(this).children('.dropdown-arrow').addClass('active');
   });
 
   // // Quando esco con il cursor da un messaggio, scompare la freccia
-  // // a cui avevo rimosso la classe hide
+  // // a cui avevo aggiunto la classe active
   $(document).on('mouseleave', '.single-text', function() {
-    $(this).children('.dropdown-arrow').addClass('hide');
+    $(this).children('.dropdown-arrow').removeClass('active');
   });
 
   // Quando clicco sulla icona-freccia dropdown-arrow, compare
   // una tendina dropdown, e tutte quelle già aperte si chiudono
   $(document).on('click', '.dropdown-arrow', function() {
-    $(this).parents('.single-text').siblings('.single-text').find('.dropdown').addClass('hide')
-    $(this).siblings('.dropdown').toggleClass('hide');
+    $(this).parents('.single-text').siblings('.single-text').find('.dropdown').removeClass('active')
+    $(this).siblings('.dropdown').toggleClass('active');
   });
 
   // Se clicco sulla li.delete, 'Cancella messaggio', l'intero messaggio(single-text),

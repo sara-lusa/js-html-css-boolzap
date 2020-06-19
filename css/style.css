@@ -63,10 +63,17 @@ main {
 
 /* CLASSI DA RIUTILIZZARE */
 /* Singolo contatto */
+section header .single-contact {
+  border-bottom: none;
+}
 .single-contact {
   height: 100%;
   padding: 10px;
   border-bottom: 0.5px solid #f9f9f9;
+}
+
+.single-contact.selected {
+  background-color: #eaebeb;
 }
 
 .single-contact .avatar {
@@ -105,7 +112,7 @@ main {
   font-size: 14px;
 }
 
-.time { 
+.time {
   color: #c1d0bb;
   font-size: 12px;
 }
@@ -127,18 +134,11 @@ section.chat-room {
   border-left: 1px solid #e0dfdf;
 }
 
+/* Header */
 section header {
   height: 80px;
   width: 100%;
   background-color: #eaeaea;
-}
-
-section header .single-contact {
-  border-bottom: none;
-}
-
-.single-contact.selected {
-  background-color: #eaebeb;
 }
 
 section header .time-icons {
@@ -150,17 +150,8 @@ section header .time-icons {
 section header .time-icons i {
   margin: 0 5px;
 }
-
-.search input,
-.write-chat input {
-  width: 80%;
-  height: 100%;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  outline: none;
-}
 /* SECTION SIDE-BAR */
+/* Contacts */
 .contacts {
   height: calc(100% - 80px);
 }
@@ -170,15 +161,16 @@ section header .time-icons i {
   overflow: auto;
 }
 
-.contacts ul li {
+.contacts .single-contact {
   height: 70px;
 }
 
-.contacts ul li:hover {
+.contacts .single-contact:hover {
   background-color: #eaebeb;
   cursor: pointer;
 }
 
+/* Notifica */
 #notifica {
   background-color: #8edafc;
   height: 80px;
@@ -207,6 +199,7 @@ section header .time-icons i {
   padding: 4px;
 }
 
+/* Search */
 .search-wrapper {
   background-color: #fafafa;
   padding: 5px;
@@ -222,6 +215,16 @@ section header .time-icons i {
   width: 18%;
   text-align: center;
 }
+
+.search input,
+.write-chat input {
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
 /* FINE SECTION SIDE-BAR */
 
 /* SECTION CHAT-ROOM */
@@ -230,6 +233,7 @@ section header .time-icons i {
   height: calc(100% - 80px);
 }
 
+/* Read-chat */
 .chat-room .read-chat {
   height: calc(100% - 80px);
   width: 100%;
@@ -237,6 +241,7 @@ section header .time-icons i {
   overflow: auto;
 }
 
+/* Texts */
 .chat-room .read-chat .texts {
   flex-direction: column;
   display: none;
@@ -246,10 +251,7 @@ section header .time-icons i {
   display: flex;
 }
 
-/* .chat-room .read-chat .texts.hide {
-  display: none;
-} */
-
+/* Single-text */
 .single-text {
   padding: 10px 10px 5px 10px;
   font-size: 15px;
@@ -263,16 +265,6 @@ section header .time-icons i {
   text-align: end;
 }
 
-.single-text .dropdown-arrow {
-  right: 10px;
-  top: 6px;
-  position: absolute;
-  /* display: none; */
-}
-
-.single-text .dropdown-arrow.hide {
-  display: none;
-}
 
 .green-text {
   align-self: flex-end;
@@ -284,6 +276,53 @@ section header .time-icons i {
   background-color: white;
 }
 
+.single-text .dropdown-arrow {
+  right: 10px;
+  top: 6px;
+  position: absolute;
+  display: none;
+}
+
+.single-text .dropdown-arrow.active {
+  display: block;
+}
+
+/* Single-text - Dropdown */
+.single-text .dropdown {
+  background-color: white;
+  position: absolute;
+  top: 92%;
+  color: #c1d0bb;
+  width: 170px;
+  padding: 15px;
+  border: 1px solid #c1d0bb;
+  z-index: 10;
+  box-shadow: 0px 0px 20px 0px #888888;
+  display: none;
+}
+
+.single-text.white-text .dropdown {
+  left: 0;
+}
+
+.single-text.green-text .dropdown {
+  right: 0;
+}
+
+.single-text .dropdown.active {
+  display: block;
+}
+
+.single-text .dropdown li.delete {
+  padding-top: 15px;
+}
+
+.single-text .dropdown li:hover {
+  color: black;
+  cursor: pointer;
+}
+
+/* Write-chat */
 .chat-room .write-chat {
   height: 80px;
   width: 100%;
@@ -297,39 +336,6 @@ section header .time-icons i {
 .chat-room .write-chat i {
   font-size: 24px;
   color: #6b7376;
-}
-
-.single-text .dropdown {
-  background-color: white;
-  position: absolute;
-  top: 92%;
-  color: #c1d0bb;
-  width: 170px;
-  padding: 15px;
-  border: 1px solid #c1d0bb;
-  z-index: 10;
-  box-shadow: 0px 0px 20px 0px #888888;
-}
-
-.single-text.white-text .dropdown {
-  left: 0;
-}
-
-.single-text.green-text .dropdown {
-  right: 0;
-}
-
-.single-text .dropdown.hide {
-  display: none;
-}
-
-.single-text .dropdown li.delete {
-  padding-top: 15px;
-}
-
-.single-text .dropdown li:hover {
-  color: black;
-  cursor: pointer;
 }
 
 /* FINE SECTION CHAT-ROOM */
